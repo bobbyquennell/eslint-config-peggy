@@ -33,7 +33,7 @@ const basicConfig = {
   overrides: [
     {
       // TypeScript specific configurations
-      files: ['**/*.js', '**/*.jsx'],
+      files: ['**/*.ts', '**/*.tsx'],
       parser: '@typescript-eslint/parser',
       plugins: [
         '@typescript-eslint'
