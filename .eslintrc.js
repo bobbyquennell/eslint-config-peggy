@@ -26,6 +26,8 @@ const basicConfig = {
     'eslint:recommended',
     'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
     'plugin:react-hooks/recommended', // Uses the recommended rules from @eslint-plugin-react
+    'prettier' , // override other formatting configs to avoid conflicts.
+    'plugin:prettier/recommended',
   ],
   rules: {
     semi: [ERROR, 'always'],
@@ -41,6 +43,7 @@ const basicConfig = {
       extends: [
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
+        "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
       ]
     }
   ]
