@@ -5,7 +5,6 @@ const basicConfig = {
     browser: true,
     node: true,
   },
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
     sourceType: 'module', // Allows for the use of imports,
@@ -20,7 +19,6 @@ const basicConfig = {
   },
   // plugins vs extends: https://stackoverflow.com/questions/53189200/whats-the-difference-between-plugins-and-extends-in-eslint
   plugins: [
-    '@typescript-eslint',
     'react',
     'react-hooks'
   ],
@@ -28,14 +26,23 @@ const basicConfig = {
     'eslint:recommended',
     'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
     'plugin:react-hooks/recommended', // Uses the recommended rules from @eslint-plugin-react
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
   ],
   rules: {
     semi: [ERROR, 'always'],
   },
-  globals: {
-    MyGlobal: true,
-  },
+  overrides: [
+    {
+      // TypeScript specific configurations
+      files: ['**/*.js', '**/*.jsx'],
+      parser: '@typescript-eslint/parser',
+      plugins: [
+        '@typescript-eslint'
+      ],
+      extends: [
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+      ]
+    }
+  ]
 };
 module.exports = basicConfig;
