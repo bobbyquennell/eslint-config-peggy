@@ -5,7 +5,7 @@ a shareable eslint config package for front-end/back-end projects using TypeScri
 
 Install `eslint-config-peggy` and [`ESlint`](https://eslint.org/):
 ```
-npm install -D eslint eslint-config-prettier
+npm install -D eslint eslint-config-peggy
 ```
 Then, add `eslint-config-peggy` to the "extends" array in your `.eslintrc.*` file.
 

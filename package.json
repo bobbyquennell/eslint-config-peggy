@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peggy",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "a shareable eslint config library",
   "main": ".eslintrc.js",
   "repository": {
