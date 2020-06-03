@@ -20,12 +20,14 @@ const basicConfig = {
   // plugins vs extends: https://stackoverflow.com/questions/53189200/whats-the-difference-between-plugins-and-extends-in-eslint
   plugins: [
     'react',
-    'react-hooks'
+    'react-hooks',
+    'jsx-a11y'
   ],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
     'plugin:react-hooks/recommended', // Uses the recommended rules from @eslint-plugin-react
+    'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
