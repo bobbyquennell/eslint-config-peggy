@@ -1,7 +1,7 @@
 # eslint-config-peggy
 a shareable eslint config package for front-end/back-end projects using TypeScript
 
-## installation
+## Installation
 
 Install `eslint-config-peggy` and [`ESlint`](https://eslint.org/):
 ```
@@ -28,7 +28,7 @@ npm install -D prettier
 ## Usage
 
 
-Add 2 more scripts in your `package.json`, run:
+Add 2 more scripts in your `package.json`
 ```
   "scripts": {
     ...

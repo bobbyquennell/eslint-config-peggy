@@ -15,6 +15,11 @@ const basicConfig = {
   settings: {
     react: {
       version: 'detect' // Tells eslint-plugin-react to automatically detect the version of ReactJS
+    },
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src/'],
+      }
     }
   },
   // plugins vs extends: https://stackoverflow.com/questions/53189200/whats-the-difference-between-plugins-and-extends-in-eslint
