@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peggy",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "a shareable eslint config library",
   "main": ".eslintrc.js",
   "repository": {
@@ -26,6 +26,7 @@
     "@typescript-eslint/parser": "^4.28.5",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
