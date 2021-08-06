@@ -27,7 +27,9 @@ const basicConfig = {
     'react',
     'react-hooks',
     'jsx-a11y',
-    'jest'
+    'jest',
+    'jest-dom',
+    'testing-library',
   ],
   extends: [
     'eslint:recommended',
@@ -63,7 +65,7 @@ const basicConfig = {
       env: {
         'jest/globals': true,
       },
-      extends: ['plugin:jest/recommended'],
+      extends: ['plugin:jest/recommended', 'plugin:jest-dom/recommended', 'plugin:testing-library/react'],
       rules: {
         '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-unsafe-call': 'off',
