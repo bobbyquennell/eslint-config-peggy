@@ -58,7 +58,14 @@ const basicConfig = {
         'plugin:@typescript-eslint/recommended',
         "prettier", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
         // upgrade setting for v8 https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
-      ]
+      ],
+      rules:{
+        // React.FunctionComponent (or the shorthand React.FC) is discouraged.
+        // https://github.com/typescript-cheatsheets/react#function-components
+        // https://github.com/facebook/create-react-app/pull/8177
+        // https://kentcdodds.com/blog/how-to-write-a-react-component-in-typescript
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+      }
     },
     {
       files: ['**/__tests__/**/*.{js,ts,tsx}', '**/*.@(spec|test).{js,ts,tsx}'],
