@@ -1,4 +1,5 @@
 const ERROR = 2;
+const OFF = 0;
 const basicConfig = {
   root: true,
   env: {
@@ -10,17 +11,17 @@ const basicConfig = {
     sourceType: 'module', // Allows for the use of imports,
     ecmaFeatures: {
       jsx: true, // Allows for the parsing of JSX
-    }
+    },
   },
   settings: {
     react: {
-      version: 'detect' // Tells eslint-plugin-react to automatically detect the version of ReactJS
+      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of ReactJS
     },
     'import/resolver': {
       node: {
         moduleDirectory: ['node_modules', 'src/'],
-      }
-    }
+      },
+    },
   },
   // plugins vs extends: https://stackoverflow.com/questions/53189200/whats-the-difference-between-plugins-and-extends-in-eslint
   plugins: [
@@ -39,7 +40,7 @@ const basicConfig = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'prettier' , // override other formatting configs to avoid conflicts.
+    'prettier', // override other formatting configs to avoid conflicts.
     'plugin:prettier/recommended',
   ],
   rules: {
@@ -50,29 +51,32 @@ const basicConfig = {
       // TypeScript specific configurations
       files: ['**/*.ts', '**/*.tsx'],
       parser: '@typescript-eslint/parser',
-      plugins: [
-        '@typescript-eslint'
-      ],
+      plugins: ['@typescript-eslint'],
       extends: [
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
-        "prettier", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+        'prettier', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
         // upgrade setting for v8 https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
       ],
-      rules:{
+      rules: {
         // React.FunctionComponent (or the shorthand React.FC) is discouraged.
         // https://github.com/typescript-cheatsheets/react#function-components
         // https://github.com/facebook/create-react-app/pull/8177
         // https://kentcdodds.com/blog/how-to-write-a-react-component-in-typescript
         '@typescript-eslint/explicit-module-boundary-types': 'off',
-      }
+        'react/prop-types': OFF,
+      },
     },
     {
       files: ['**/__tests__/**/*.{js,ts,tsx}', '**/*.@(spec|test).{js,ts,tsx}'],
       env: {
         'jest/globals': true,
       },
-      extends: ['plugin:jest/recommended', 'plugin:jest-dom/recommended', 'plugin:testing-library/react'],
+      extends: [
+        'plugin:jest/recommended',
+        'plugin:jest-dom/recommended',
+        'plugin:testing-library/react',
+      ],
       rules: {
         '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-unsafe-call': 'off',
@@ -102,6 +106,6 @@ const basicConfig = {
         'jest/valid-title': 'error',
       },
     },
-  ]
+  ],
 };
 module.exports = basicConfig;
