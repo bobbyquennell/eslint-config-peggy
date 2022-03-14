@@ -65,6 +65,7 @@ const basicConfig = {
         // https://kentcdodds.com/blog/how-to-write-a-react-component-in-typescript
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'react/prop-types': OFF,
+        '@typescript-eslint/no-non-null-assertion': OFF, // sometimes we need to use ! to mark variable will never be undefined, avoid TS errors like: the Type 'number | undefined' is not assignable to type 'number', https://github.com/bobbyquennell/leetcode/blob/a7a3ac69fc686d136007b46810532b139e148300/src/twoSum/index.ts#L54
       },
     },
     {
